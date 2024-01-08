@@ -29,6 +29,8 @@
 \usepackage{ifthen}                                           
 \usepackage{lscape}
 \usepackage{placeins}
+\usepackage{xparse}
+
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -59,9 +61,9 @@
 \renewcommand{\thetable}{\theenumi}
 \large\textbf{Question 10.5.2.5} : \normalsize Find the number of terms in each of the following APs : 
 
-(i) 7, 13, 19, ... 205
+\brak{i} 7, 13, 19, ... 205
 
-(ii) 18, 15\(\frac{1}{2}\), 13, ... -47
+\brak{ii} 18, 15$\frac{1}{2}$, 13, ... -47
 
 \vspace{4mm} 
 
@@ -69,55 +71,80 @@
 
 \vspace{4mm}
 
-\textbf{(i)} The \(n^{th}\) term of the Arithmetic progression is given as a + (n-1)d where a is the first term and d is the common difference.
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|} 
+ \hline
+  Parameter & Used to denote \\ 
+ \hline\hline
+  a & First term of AP \\ 
+ \hline
+ d & Common difference  \\
+ \hline
+ x\brak{n} & $n^{th}$ term of series \\
+ \hline
+ X\brak{z} & z transform of x\brak{n} \\
+ \hline
+ u\sbrak{n} & discrete unit step function \\
+ \hline
+ S & $\sbrak{\sum_{n=0}^{\infty}nz^{-n}}$ \\
+ \hline
+ ROC & Region of Convergence \\
+ \hline
+\end{tabular}
+ \vspace{4mm}
+ \caption{Parameter Table}
+\end{table}
+
+\textbf{\brak i} 
+
+The $n^{th}$ term of the Arithmetic progression is given as a + nd.
 
 The common difference of the AP is given by the difference between successive terms.
 
 \vspace{4mm}
 
-Common difference (d) = 13 - 7 = 6
+Common difference \brak{d} = 13 - 7 = 6
 
-First term (a) = 7
+First term \brak{a} = 7
 
 \vspace{4mm}
 
-If 205 is the \(n{th}\) term of the series, we have :
+If 205 is the $n{th}$ term of the series, we have :
 \begin{align}
-&205 = 7 + (n-1)6\\ 
-\implies&  198 = (n-1)6\\
-\implies&  33 = n-1\\
-\implies& n = 34
+&205 = 7 + \brak{n}6\\ 
+\implies&  198 = 6n\\
+\implies&  33 = n
 \end{align}
-
+$\therefore$ n goes from 0 to 33.\\
 \large\textbf{Answer} : \normalsize There are 34 elements in the series.
 
 \vspace{4mm}
 
-\textbf{(ii)} The \(n^{th}\) term of the Arithmetic progression is given as a + (n-1)*d where a is the first term and d is the common difference.
+\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression is given as a + nd.
 
 The common difference of the AP is given by the difference between successive terms.
 
 \vspace{4mm}
 
-Common difference (d) = 15\(\frac{1}{2}\) - 18 = -2\(\frac{1}{2}\)
+Common difference \brak{d} = 15$\frac{1}{2}$ - 18 = -2$\frac{1}{2}$
 
-First term (a) = 18
+First term \brak{a} = 18
 
 \vspace{4mm}
 
-If -47 is the \(n{th}\) term of the series, we have :
+If -47 is the $n^{th}$ term of the series, we have :
 \begin{align}
-&-47 = 18 + (n-1)\left(-2\left(\frac{1}{2}\right)\right)\\ 
-\implies& -65 = (n-1)\left(-2\left(\frac{1}{2}\right)\right)\\
-\implies& 26 = n-1\\
-\implies& n = 27
+&-47 = 18 + \brak{n}\brak{-2\brak{\frac{1}{2}}}\\ 
+\implies& -65 = \brak{n}\brak{-2\brak{\frac{1}{2}}}\\
+\implies& n = 26
 \end{align} 
-
+$\therefore$ n goes from 0 to 26.\\
 \large\textbf{Answer} : \normalsize There are 27 elements in the series.
 
-\vspace{10mm}
+\vspace{4mm}
 
-\large\textbf{Question} : \normalsize Express the $n^{th}$ term in each case as x(n) and find its z transform.
+\large\textbf{Question} : \normalsize Express the $n^{th}$ term in each case as x\brak{n} and find its z transform.
 
 \vspace{4mm}
 
@@ -125,168 +152,167 @@ If -47 is the \(n{th}\) term of the series, we have :
 
 \vspace{4mm}
 
-\textbf{(i)} The \(n^{th}\) term of the Arithmetic progression ($T_{n}$) is given as a + (n-1)d where a is the first term and d is the common difference.
+\textbf{\brak{i}} The $n^{th}$ term of the Arithmetic progression is given as a + \brak{n}d .
 
 \begin{align}
-\therefore T_{n} = 7 + (n-1)6 \\
-x(n) = 7 + (n-1)6
+x\brak{n} = 7 + \brak{n}6
 \end{align}
-The Z transformation for x[n] is given by :
+The Z transformation for x\sbrak{n} is given by :
+
+\begin{equation}\label{eq:eq1}
+    X\brak{z} =\sbrak{\sum_{n=-\infty}^{\infty}x\sbrak{n}z^{-n}} 
+\end{equation}
+
+However, x\brak{n} cannot be summed from $-\infty$ to zero as the number of terms cannot be negative due to which the $n^{th}$ will not be defined for this range of n.\\
+So, we will modify x\sbrak{n} by multiplying it with discrete unit step function u\brak{n} so we have the value as zero for n$<$0.
 
 \begin{align}
-    X(z) =\left[ \sum_{n=-\infty}^{\infty}x[n]z^{-n}\right]
-\end{align}
-
-However, x[n] cannot be summed from $-\infty$ to zero as the number of terms cannot be negative due to which the $n^{th}$ will not be defined for this range of n.\\
-So, we will modify x[n] by multiplying it with unit step function(u(n)) so we have the value as zero for n$<$1.
-
-\begin{align}
-&x(n) = \left(7 + (n-1)6\right)u(n) \\
-     x\brak{n} & = \begin{cases}
-        0 & \text{for } n < 1 \\
-        7 + (n-1)6 & \text{for } n \geq 1
+&x\brak{n} = \brak{7 + \brak{n}6}u\sbrak{n} \\
+     x\brak{n} & = \begin{cases} 
+        0 & \text{for } n < 0 \\
+        7 + \brak{n}6 & \text{for } n \geq 0
     \end{cases}
 \end{align}
-Now, using the above function in equation (11):
+Now, using the above function in equation \eqref{eq:eq1}: 
 
 \begin{align}
-X(z) &= \sum_{n=1}^{\infty}x[n]z^{-n}\\
- &= \sum_{n=1}^{\infty}(a+(n-1)d)z^{-n} \\
- &=  \left[\sum_{n=1}^{\infty}az^{-n} \right] + \left[ \sum_{n=1}^{\infty}(nd)z^{-n} \right] - \left[ \sum_{n=1}^{\infty}dz^{-n} \right]
- \end{align}
-\begin{align}
- &=  \left[\sum_{n=1}^{\infty}7z^{-n} \right] + \left[ \sum_{n=1}^{\infty}(6n)z^{-n} \right] - \left[ \sum_{n=1}^{\infty}6z^{-n} \right]\\
- &=  \left[\sum_{n=1}^{\infty}z^{-n} \right] + \left[ \sum_{n=1}^{\infty}(6n)z^{-n} \right]\\
- &= \frac{1}{z-1} + 6\left[ \sum_{n=1}^{\infty}(n)z^{-n} \right]
+X\brak{z} &= \sum_{n=0}^{\infty}x\sbrak{n}z^{-n}\\
+ &= \sum_{n=0}^{\infty}\brak{a+nd}z^{-n} \\
+ &=  \sbrak{\sum_{n=0}^{\infty}az^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
+ &=  \sbrak{\sum_{n=0}^{\infty}7z^{-n}} + \sbrak{\sum_{n=0}^{\infty}6nz^{-n}}\\
+ &= 7\frac{z}{z-1} + 6\sbrak{\sum_{n=0}^{\infty}nz^{-n}} \label{eq:eq4}
 \end{align}
 Calculating the integral in the above expression :\\
 \begin{align}
-&S =  \left[\sum_{n=1}^{\infty}(n)z^{-n}\right ]\\ 
-&S = z^{-1} + 2z^{-2} + 3z^{-3} + ...\\
-&Sz^{-1} = z^{-2} + 2z^{-3} + 3z{-4} + ... 
+&S =  \sbrak{\sum_{n=0}^{\infty}nz^{-n}}\\ 
+&S = z^{-1} + 2z^{-2} + 3z^{-3} + ... \label{eq:eq2}\\
+&Sz^{-1} = z^{-2} + 2z^{-3} + 3z{-4} + \label{eq:eq3} ... 
 \end{align}
-Subtracting (22) and (21) \\
+Subtracting \eqref{eq:eq2} and \eqref{eq:eq3} \\
 \begin{align}
-S(1-z^{-1}) &= z^{-1} + z^{-2} + z^{-3} + ... \\
- &= \frac{1}{(z-1)(1-z^{-1})}\\
+S\brak{1-z^{-1}} &= z^{-1} + z^{-2} + z^{-3} + ... \\
+ &= \frac{1}{\brak{z-1}\brak{1-z^{-1}}}\\
  &= \frac{1}{z-2+z^{-1}}\\
-\therefore S &= \frac{z}{(z-1)^2}
+\therefore S &= \frac{z}{\brak{z-1}^2} \label{eq:eq5}
 \end{align}
-Using equations (26) and (19) :\\
+Using equations \eqref{eq:eq4} and \eqref{eq:eq5} :\\
 \begin{align}
-X(z) &= \frac{1}{z-1} + \frac{6z}{(z-1)^2}\\
- &= \frac{7z-1}{(z-1)^2}
+X\brak{z} &= \frac{7z}{z-1} + \frac{6z}{\brak{z-1}^2}\\
+ &= \frac{7z^{2}-z}{\brak{z-1}^2}
 \end{align}
-\large\textbf{Answer} : \normalsize The z transformation for x(n) where x(n) is the $n^{th}$ term of the AP is $\frac{7z-1}{(z-1)^2}$.
+\large\textbf{Answer} : \normalsize The z transformation for x\brak{n} where x\brak{n} is the $n^{th}$ term of the AP is $\frac{7z^{2} - z}{\brak{z-1}^2}$.
+
 \vspace{4mm}
 
-\textbf{(ii)} The \(n^{th}\) term of the Arithmetic progression ($T_{n}$) is given as a + (n-1)d where a is the first term and d is the common difference.
+\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression is given as a + nd.
 
-$\therefore T_{n} = 18 + (n-1)\left(-2\frac{1}{2}\right) $
+$x\brak{n} = 18 + n\brak{-2\frac{1}{2}}$
 
-$x(n) = 18 + (n-1)\left(-2\frac{1}{2}\right)$
-
-The Z transformation for x[n] is given by : \\
+The Z transformation for x\sbrak{n} is given by : \\
 \begin{align}
-X(z) =\left[ \sum_{n=-\infty}^{\infty}x[n]z^{-n}\right]
+X\brak{z} =\sbrak{\sum_{n=-\infty}^{\infty}x\sbrak{n}z^{-n}}
 \end{align}
-\\
-\vspace{15mm}
-However, x[n] cannot be summed from $-\infty$ to zero as the number of terms cannot be negative due to which the $n^{th}$ will not be defined for this range of n.\\
-So, we will modify x[n] by multiplying it with unit step function(u(n)) so we have the value as zero for n$<$1.
+
+However, x\sbrak{n} cannot be summed from $-\infty$ to zero as the number of terms cannot be negative due to which the $n^{th}$ will not be defined for this range of n.\\
+So, we will modify x\sbrak{n} by multiplying it with unit step function u\sbrak{n} so we have the value as zero for n$<$0.
 \begin{align}
-&x(n) = \left(18 + (n-1)\left(-2\frac{1}{2}\right)\right)u(n) \\
+&x\brak{n} = \brak{18 + n\brak{-2\frac{1}{2}}}u\brak{n} \\
      x\brak{n} & = \begin{cases}
-        0 & \text{for } n < 1 \\
-        18 +(n-1)\left(-2\frac{1}{2}\right) & \text{for } n \geq 1
+        0 & \text{for } n < 0 \\
+        18 + n\brak{-2\frac{1}{2}} & \text{for } n \geq 0
     \end{cases}
 \end{align}
 \begin{align}
-X(z) &= \sum_{n=1}^{\infty}x[n]z^{-n}\\
- &= \sum_{n=1}^{\infty}(a+(n-1)d)z^{-n} \\
- &=  \left[\sum_{n=1}^{\infty}az^{-n} \right] + \left[ \sum_{n=1}^{\infty}(nd)z^{-n} \right] - \left[ \sum_{n=1}^{\infty}dz^{-n} \right]\\
- &=  \left[\sum_{n=1}^{\infty}18z^{-n} \right] + \left[ \sum_{n=1}^{\infty}(n)\left(-2\frac{1}{2}\right)z^{-n} \right] - \left[ \sum_{n=1}^{\infty}\left(-2\frac{1}{2}\right)z^{-n} \right]\\
- &=  \left[\sum_{n=1}^{\infty}\left(20\frac{1}{2}\right)z^{-n} \right] - \left[ \sum_{n=1}^{\infty}\left(n\left(2\frac{1}{2}\right)\right)z^{-n} \right]\\
- &= \left(20\frac{1}{2}\right)\left[\sum_{n=1}^{\infty}z^{-n} \right] - \left[ \sum_{n=1}^{\infty}\left(n\left(2\frac{1}{2}\right)\right)z^{-n} \right]\\
- &= \left(20\frac{1}{2}\right)\frac{1}{z-1} - \left(2\frac{1}{2}\right)\left[ \sum_{n=1}^{\infty}(n)z^{-n} \right]\\
- &= \left(20\frac{1}{2}\right)\frac{1}{z-1} - \left(2\frac{1}{2}\right)S
+X\brak{z} &= \sum_{n=0}^{\infty}x\sbrak{n}z^{-n}\\
+ &= \sum_{n=0}^{\infty}\brak{a + nd}z^{-n} \\
+ &=  \sbrak{\sum_{n=0}^{\infty}az^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
+ &=  \sbrak{\sum_{n=0}^{\infty}18z^{-n}} + \sbrak{\sum_{n=0}^{\infty}n\brak{-2\frac{1}{2}}z^{-n}}\\
+ &=  \sbrak{\sum_{n=0}^{\infty}18z^{-n}} - \sbrak{\sum_{n=0}^{\infty}\brak{n\brak{2\frac{1}{2}}}z^{-n} }\\
+ &= 18\sbrak{\sum_{n=0}^{\infty}z^{-n}} - \sbrak{\sum_{n=0}^{\infty}\brak{n\brak{2\frac{1}{2}}}z^{-n}}\label{eq:eq8}\\ 
+ &= 18\frac{z}{z-1} - \brak{2\frac{1}{2}}\sbrak{\sum_{n=0}^{\infty}nz^{-n}}\\
+ &= 18\frac{z}{z-1} - \brak{2\frac{1}{2}}S \label{eq:eq6}
 \end{align}
 
-Using equation (26) and (39) : \\
+Using equation \eqref{eq:eq5} and \eqref{eq:eq6} : \\
 \begin{align}
-X(z) &=  \left(20\frac{1}{2}\right)\frac{1}{z-1} - \left(2\frac{1}{2}\right)\frac{z}{(z-1)^2}\\
-&= \frac{18z - \left(20\frac{1}{2}\right)}{(z-1)^2}
+X\brak{z} &=  \frac{18z}{z-1} - \brak{2\frac{1}{2}}\frac{z}{\brak{z-1}^2}\\
+&= \frac{18z^{2} - \brak{20z\frac{1}{2}}}{\brak{z-1}^2}
 \end{align}
-\large\textbf{Answer} : \normalsize The z transformation for x(n) where x(n) is the $n^{th}$ term of the AP is $\frac{18z - \left(20\frac{1}{2}\right)}{(z-1)^2}$.
+\large\textbf{Answer} : \normalsize The z transformation for x\brak{n} where x\brak{n} is the $n^{th}$ term of the AP is $\frac{18z^{2} - \brak{20\frac{1}{2}}z}{\brak{z-1}^2}$.
 
+\vspace{4mm}
+
+\large\textbf{Question} : \normalsize Plot the graph of x\brak{n} and find the ROC of X\brak{z} in each case.
+
+\vspace{4mm}
 \newpage
+\large\textbf{Solution} :
 
-\large\textbf{Question} : \normalsize Plot the graph of x(n) and find the ROC of X(z) in each case.
+\vspace{4mm}
 
-\large\textbf{Solution} :\\
-\large\textbf{(i)} \normalsize The graph of x(n) is :
-\begin{figure}[h]
+\large\textbf{\brak{i}} \normalsize The graph of x\brak{n} is :
+\begin{figure}[ht]
     \begin{center}
     \includegraphics[width = 9cm]{Figure_1}
-    Fig. 0. Plot of x(n) \\
+    Fig. 0. Plot of x\brak{n} \\
     \end{center}
 \end{figure}
 
-The ROC (Region of Convergence) of x(n) is defined as the range of values of z for which X(z) will converge where X(z) is the z transform of x(n).\\
+The ROC of x\brak{n} is defined as the range of values of z for which X\brak{z} will converge where X\brak{z} is the z transform of x\brak{n}.\\
 \begin{align}
-   \left|X(z)\right| = \sum_{n = -\infty}^{\infty}\left|x(n)z^{-n}\right| < \infty
+   \lvert X\brak{z}\rvert = \sum_{n = -\infty}^{\infty}\lvert x\brak{n}z^{-n}\rvert < \infty
 \end{align}
 
-By equation (18) :\\
+By equation \eqref{eq:eq4} :\\
 \begin{align}
-X(z) &=  \left[\sum_{n=1}^{\infty}z^{-n} \right] + 6\left[ \sum_{n=1}^{\infty}(n)z^{-n} \right]
+X\brak{z} &=  7\sbrak{\sum_{n=0}^{\infty}z^{-n}} + 6\sbrak{\sum_{n=0}^{\infty}nz^{-n}} \label{eq:eq7}
 \end{align}
-The sum $ \left[\sum_{n=1}^{\infty}z^{-n} \right]$ will converge only if z is not zero and $\left|z^{-1}\right| < 1$ (or $|z| > 1$) as it is forming an infinite GP with common difference $z^{-1}$.\\
+The sum $ \brak{\sum_{n=0}^{\infty}z^{-n}} $ will converge only if z is not zero and $ |z^{-1}|< 1 $ as it is forming an infinite GP with common difference $z^{-1}$. 
 
-Observe the second part of the equation (43)(or 18) is 6S which was calculated using equation (23) : \\
+Observe the second part of the equation \eqref{eq:eq7} or \eqref{eq:eq4} is 6S which was calculated using equation \eqref{eq:eq5} : \\
 \begin{align}
-    S(1-z^{-1}) &= z^{-1} + z^{-2} + z^{-3} + ... 
+    S\brak{1-z^{-1}} &= z^{-1} + z^{-2} + z^{-3} + ... 
 \end{align}
-The sum S will converge only if z is not 0 and $\left|z^{-1}\right| < 1$ as again we obtain an infinite GP with common difference $z^{-1}$.For both the parts of the equation (45), the ROC is same.
+The sum S will converge only if z is not 0 and $\lvert z^{-1} \rvert < 1 $ or $ \lvert z \rvert > 1$ as again we obtain an infinite GP with common difference $z^{-1}$.For both the parts of the equation \eqref{eq:eq7}, the ROC is same.
 
 \vspace{4mm}
 
-\large\textbf{Answer} : \normalsize The ROC of X(z) is  $|z| > 1$
+\large\textbf{Answer} : \normalsize The ROC of X\brak{z} is  $\lvert z \rvert > 1$
 
-\vspace{8mm}
+\vspace{15mm}
 
-\large\textbf{(ii)} \normalsize The graph of x(n) is :
+\large\textbf{\brak{ii}} \normalsize The graph of x\brak{n} is :
 
 \vspace{4mm}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \begin{center}
     \includegraphics[width = 9cm]{Figure_2}
-    Fig. 1. Plot of x(n) \\
+    Fig. 1. Plot of x\brak{n} \\
     \end{center}
 \end{figure}
 
 \FloatBarrier
 
-The ROC (Region of Convergence) of x(n) is defined as the range of values of z for which X(z) will converge where X(z) is the z transform of x(n).\\
+The ROC of x\brak{n} is defined as the range of values of z for which X\brak{z} will converge where X\brak{z} is the z transform of x\brak{n}.\\
 \begin{align}
-   \left|X(z)\right| = \sum_{n = -\infty}^{\infty}\left|x(n)z^{-n}\right| < \infty
+   \lvert X\brak{z} \rvert  = \sum_{n = -\infty}^{\infty}\lvert x\brak{n}z^{-n}\rvert < \infty
 \end{align}
 
-By equation (37) :\\
+By equation \eqref{eq:eq8} :\\
 \begin{align}
-X(z) = \left(20\frac{1}{2}\right)\left[\sum_{n=1}^{\infty}z^{-n} \right] - \left(2\frac{1}{2}\right)\left[ \sum_{n=1}^{\infty}\left(n\right)z^{-n} \right]
+X\brak{z} = 18\sbrak{\sum_{n=0}^{\infty}z^{-n}} - \brak{2\frac{1}{2}}\sbrak{\sum_{n=0}^{\infty}nz^{-n}} \label{eq:eq9}
 \end{align}
-The sum $ \left[\sum_{n=1}^{\infty}z^{-n} \right]$ will converge only if z is not zero and $\left|z^{-1}\right| < 1$ ( or $|z| > 1$) as it is forming an infinite GP with common difference $z^{-1}$.\\
+The sum $ \sbrak{\sum_{n=0}^{\infty}z^{-n}}$ will converge only if z is not zero and $\left|z^{-1}\right| < 1$ as it is forming an infinite GP with common difference $z^{-1}$.\\
 
-Observe the second part of the equation (46)(or 37) is $-2\frac{1}{2}$S which was calculated using equation (23) : \\
+Observe the second part of the equation \eqref{eq:eq8} or \eqref{eq:eq9} is $-2\frac{1}{2}$S which was calculated using equation \eqref{eq:eq5} : \\
 \begin{align}
-    S(1-z^{-1}) &= z^{-1} + z^{-2} + z^{-3} + ... 
+    S\brak{1-z^{-1}} &= z^{-1} + z^{-2} + z^{-3} + ... 
 \end{align}
-The sum S will converge only if z is not 0 and $\left|z\right| < 1$ as again we obtain an infinite GP with common difference $z^{-1}$.For both the parts of the equation (47), the ROC is same.
+The sum S will converge only if z is not 0 and $\lvert z^{-1} \rvert < 1 $ or $ \lvert z \rvert > 1$ as again we obtain an infinite GP with common difference $z^{-1}$.For both the parts of the equation \eqref{eq:eq9}, the ROC is same.
 
 \vspace{4mm}
 
-\large\textbf{Answer} : \normalsize The ROC of X(z) is  $|z| > 1$
+\large\textbf{Answer} : \normalsize The ROC of X\brak{z} is  $|z| > 1$
 
 \end{document}
