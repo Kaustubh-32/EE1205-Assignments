@@ -73,23 +73,20 @@
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|c|c|} 
+\begin{tabular}{|c|c|c|c|} 
  \hline
-  Parameter & Used to denote \\ 
+  Parameter & Used to denote & $1^{st}$ AP & $2^{nd}$ AP \\ 
  \hline\hline
-  a & First term of AP \\ 
+
+ x\brak{n} & $n^{th}$ term of series & 7 + 6n & 18 -2n$\frac{1}{2}$ \\
  \hline
- d & Common difference  \\
+   x\brak{0} & First term of AP & 7 & 18\\ 
  \hline
- x\brak{n} & $n^{th}$ term of series \\
+  d & Common difference & 6 & -2$\frac{1}{2}$ \\
  \hline
- X\brak{z} & z transform of x\brak{n} \\
+ X\brak{z} & z transform of x\brak{n} & To find & To find  \\
  \hline
- u\sbrak{n} & discrete unit step function \\
- \hline
- S & $\sbrak{\sum_{n=0}^{\infty}nz^{-n}}$ \\
- \hline
- ROC & Region of Convergence \\
+ ROC & Region of Convergence & To find & To find \\
  \hline
 \end{tabular}
  \vspace{4mm}
@@ -98,7 +95,7 @@
 
 \textbf{\brak i} 
 
-The $n^{th}$ term of the Arithmetic progression is given as a + nd.
+The $n^{th}$ term of the Arithmetic progression \brak{x\brak{n}} is given as x\brak{0} + nd.
 
 The common difference of the AP is given by the difference between successive terms.
 
@@ -106,7 +103,7 @@ The common difference of the AP is given by the difference between successive te
 
 Common difference \brak{d} = 13 - 7 = 6
 
-First term \brak{a} = 7
+First term \brak{x\brak{0}} = 7
 
 \vspace{4mm}
 
@@ -121,7 +118,7 @@ $\therefore$ n goes from 0 to 33.\\
 
 \vspace{4mm}
 
-\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression is given as a + nd.
+\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression \brak{x\brak{n}} is given as x(0) + nd
 
 The common difference of the AP is given by the difference between successive terms.
 
@@ -152,16 +149,16 @@ $\therefore$ n goes from 0 to 26.\\
 
 \vspace{4mm}
 
-\textbf{\brak{i}} The $n^{th}$ term of the Arithmetic progression is given as a + \brak{n}d .
+\textbf{\brak{i}} The $n^{th}$ term of the Arithmetic progression is given as x(0) + \brak{n}d . x\brak{0} = 7 and d = 6.
 
 \begin{align}
 x\brak{n} = 7 + \brak{n}6
 \end{align}
 The Z transformation for x\sbrak{n} is given by :
 
-\begin{equation}\label{eq:eq1}
-    X\brak{z} =\sbrak{\sum_{n=-\infty}^{\infty}x\sbrak{n}z^{-n}} 
-\end{equation}
+\begin{align}  \label{eq:eq1}
+    X\brak{z} =\sbrak{\sum_{n=-\infty}^{\infty}x\sbrak{n}z^{-n}}
+\end{align}
 
 However, x\brak{n} cannot be summed from $-\infty$ to zero as the number of terms cannot be negative due to which the $n^{th}$ will not be defined for this range of n.\\
 So, we will modify x\sbrak{n} by multiplying it with discrete unit step function u\brak{n} so we have the value as zero for n$<$0.
@@ -177,8 +174,8 @@ Now, using the above function in equation \eqref{eq:eq1}:
 
 \begin{align}
 X\brak{z} &= \sum_{n=0}^{\infty}x\sbrak{n}z^{-n}\\
- &= \sum_{n=0}^{\infty}\brak{a+nd}z^{-n} \\
- &=  \sbrak{\sum_{n=0}^{\infty}az^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
+ &= \sum_{n=0}^{\infty}\brak{x\brak{0}+nd}z^{-n} \\
+ &=  \sbrak{\sum_{n=0}^{\infty}x\brak{0}z^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
  &=  \sbrak{\sum_{n=0}^{\infty}7z^{-n}} + \sbrak{\sum_{n=0}^{\infty}6nz^{-n}}\\
  &= 7\frac{z}{z-1} + 6\sbrak{\sum_{n=0}^{\infty}nz^{-n}} \label{eq:eq4}
 \end{align}
@@ -186,7 +183,7 @@ Calculating the integral in the above expression :\\
 \begin{align}
 &S =  \sbrak{\sum_{n=0}^{\infty}nz^{-n}}\\ 
 &S = z^{-1} + 2z^{-2} + 3z^{-3} + ... \label{eq:eq2}\\
-&Sz^{-1} = z^{-2} + 2z^{-3} + 3z{-4} + \label{eq:eq3} ... 
+&Sz^{-1} = z^{-2} + 2z^{-3} + 3z{-4} + ... \label{eq:eq3}
 \end{align}
 Subtracting \eqref{eq:eq2} and \eqref{eq:eq3} \\
 \begin{align}
@@ -204,7 +201,7 @@ X\brak{z} &= \frac{7z}{z-1} + \frac{6z}{\brak{z-1}^2}\\
 
 \vspace{4mm}
 
-\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression is given as a + nd.
+\textbf{\brak{ii}} The $n^{th}$ term of the Arithmetic progression is given as x\brak{0} + nd. x\brak{0} = 18 and d = -2$\frac{1}{2}$
 
 $x\brak{n} = 18 + n\brak{-2\frac{1}{2}}$
 
@@ -224,8 +221,8 @@ So, we will modify x\sbrak{n} by multiplying it with unit step function u\sbrak{
 \end{align}
 \begin{align}
 X\brak{z} &= \sum_{n=0}^{\infty}x\sbrak{n}z^{-n}\\
- &= \sum_{n=0}^{\infty}\brak{a + nd}z^{-n} \\
- &=  \sbrak{\sum_{n=0}^{\infty}az^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
+ &= \sum_{n=0}^{\infty}\brak{x\brak{0} + nd}z^{-n} \\
+ &=  \sbrak{\sum_{n=0}^{\infty}x\brak{0}z^{-n}} + \sbrak{\sum_{n=0}^{\infty}ndz^{-n}}\\
  &=  \sbrak{\sum_{n=0}^{\infty}18z^{-n}} + \sbrak{\sum_{n=0}^{\infty}n\brak{-2\frac{1}{2}}z^{-n}}\\
  &=  \sbrak{\sum_{n=0}^{\infty}18z^{-n}} - \sbrak{\sum_{n=0}^{\infty}\brak{n\brak{2\frac{1}{2}}}z^{-n} }\\
  &= 18\sbrak{\sum_{n=0}^{\infty}z^{-n}} - \sbrak{\sum_{n=0}^{\infty}\brak{n\brak{2\frac{1}{2}}}z^{-n}}\label{eq:eq8}\\ 
