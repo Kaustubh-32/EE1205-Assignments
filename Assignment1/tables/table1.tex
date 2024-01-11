@@ -1,88 +1,34 @@
-% \iffalse
-\let\negmedspace\undefined
-\let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
-\usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts,amsthm}
-\usepackage{algorithmic}
-\usepackage{graphicx}
-\usepackage{textcomp}
-\usepackage{xcolor}
-\usepackage{txfonts}
-\usepackage{listings}
-\usepackage{enumitem}
-\usepackage{mathtools}
-\usepackage{gensymb}
-\usepackage{comment}
-\usepackage[breaklinks=true]{hyperref}
-\usepackage{tkz-euclide} 
-\usepackage{listings}
-\usepackage{gvv}                                        
-\def\inputGnumericTable{}                                 
-\usepackage[latin1]{inputenc}                                
-\usepackage{color}                                            
-\usepackage{array}                                            
-\usepackage{longtable}                                       
-\usepackage{calc}                                             
-\usepackage{multirow}                                         
-\usepackage{hhline}                                           
-\usepackage{ifthen}                                           
-\usepackage{lscape}
-\usepackage{placeins}
-\usepackage{xparse}
-
-
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{problem}{Problem}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{example}{Example}[section]
-\newtheorem{definition}[problem]{Definition}
-\newcommand{\BEQA}{\begin{eqnarray}}
-\newcommand{\EEQA}{\end{eqnarray}}
-\newcommand{\define}{\stackrel{\triangle}{=}}
-\theoremstyle{remark}
-\newtheorem{rem}{Remark}
-
-\begin{document}
-
-\bibliographystyle{IEEEtran}
-\vspace{3cm}
-
-\Large\title{NCERT Question 10.5.2.5}
-\large\author{EE23BTECH11032 - Kaustubh Parag Khachane $^{*}$% <-this % stops a space
-}
-\maketitle
-\newpage
-\bigskip
-
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
-
-\vspace{4mm}
-
-\begin{table}[ht]
+\begin{table}[ht] \label{table1}
 \centering
-\begin{tabular}{|c|c|c|c|} 
+\setlength{\extrarowheight}{10pt}
+\begin{tabular}{|c|c|c|} 
  \hline
-  Parameter & Used to denote & $1^{st}$ AP & $2^{nd}$ AP \\ 
- \hline\hline
-
- x\brak{n} & $n^{th}$ term of series & 7 + 6n & 18 -2n$\frac{1}{2}$ \\
+  \textbf{Parameter} & \textbf{Used to denote } & \textbf{Values} \\ 
  \hline
-   x\brak{0} & First term of AP & 7 & 18\\ 
+ $x_{1}$\brak{n} & $n^{th}$ term of $1^{st}$ series & 7 + 6n  \\
  \hline
-  d & Common difference & 6 & -2$\frac{1}{2}$ \\
+ $x_{2}$\brak{n} & $n^{th}$ term of $2^{nd}$ series & 18 -2$\frac{1}{2}$n \\
  \hline
- X\brak{z} & z transform of x\brak{n} & To find & To find  \\
+$x_{1}$\brak{0} & First term of $1^{st}$ AP & 7\\ 
  \hline
- ROC & Region of Convergence & To find & To find \\
+ $x_{2}$\brak{0} & First term of $2^{nd}$ AP & 18\\ 
+ \hline
+  $d_{1}$ & Common difference of $1^{st}$ AP & 6 \\
+ \hline
+ $d_{2}$& Common difference of $2^{nd}$ & -2$\frac{1}{2}$ \\[5pt]
+ \hline
+ 
+ $X_{i}$\brak{z} & z transform of $x_{i}$\brak{n}, i= 1 or 2 & $\sum_{n=-\infty}^{\infty}x\brak{n}z^{-n}$ \\
+ \hline
+ u\brak{n} & unit step function & $\begin{cases}   1 \text { for } n \geq 0\\
+            0 \text{ for } n < 0  \end{cases}$ \\
+ \hline
+  U\brak{z} & z transform of u\brak{n} & $\sum_{n=0}^{\infty}z^{-n} =  \frac{1}{1-z^{-1}}$\\
+  \hline
+ ROC & Region of Convergence & To find \\
  \hline
 \end{tabular}
  \vspace{4mm}
  \caption{Parameter Table}
+ \label{table0}
 \end{table}
-
-
-\end{document}
