@@ -71,76 +71,56 @@
 \large\textbf{Solution} :\normalsize
 
 \input{tables/table1}
-The number of terms in the AP x(n) is given by : 
+The number of terms in the AP x(n) is given by: 
 \begin{align}  \label{eq:eq12}
     \frac{x\brak{n} - x\brak{0}}{d}
-\end{align}
-
-\input{tables/table2}
-
-Finding the z transform and ROC : \\
+    \end{align}
 \begin{align}
-\text{For an AP } x\brak{n} &= \sbrak{x\brak{0} + nd}u\brak{n}\\
-&=x\brak{0}u\brak{n} + dnu\brak{n}\label{eq:eq2}\\
-   z\{u\brak{n}\} &=  U\brak{z} = \frac{1}{1 - z^{-1}} , |z| > 1\label{eq:eq4}\\
-   z\{nu\brak{n}\} &= -z\frac{dU\brak{z}}{dz} = \frac{z^{-1}}{\brak{1-z^{-1}}^2},|z| > 1 \label{eq:eq5}
-\end{align}
-ROC is given by values of z for which :
-\begin{align}
-    \lvert X\brak{z}\rvert = \sum_{n = -\infty}^{\infty}\lvert x\brak{n}z^{-n}\rvert < \infty
-\end{align}
-Using equations \eqref{eq:eq4} and \eqref{eq:eq5} in equation \eqref{eq:eq2} :
-\begin{align}\label{eq:eq3}
-    z\{x\brak{n}\} = X(z) = \frac{x\brak{0}}{1 - z^{-1}} + d\frac{z^{-1}}{\brak{1-z^{-1}}^2}
+    X_i(z) = \frac{x_i\brak{0}}{1 - z^{-1}} + d_i\frac{z^{-1}}{\brak{1-z^{-1}}^2} \text{ , for i=1,2} \label{eq:eq3}
 \end{align}
 \textbf{\brak{i}}
-
 \begin{align}
-x_{1}\brak{n} &= \brak{7 + \brak{n}6}u\brak{n}\\
-     x_{1}\brak{n} & = \begin{cases} 
-        0 & \text{for } n < 0 \\
-        7 + \brak{n}6 & \text{for } n \geq 0
-    \end{cases}
+x_{1}\brak{n} &= \brak{7 + \brak{n}6}u\brak{n}
 \end{align}
+Using the values in \tabref{table0} and equation \eqref{eq:eq12},
+\begin{align}
+    k_1 = \frac{205 - 7}{6} = 33
+\end{align}
+
 Using the values in \tabref{table0} and equation \eqref{eq:eq3} :
 \begin{align}
-X_{1}\brak{z} &= \frac{7}{1 - z^{-1}} + \frac{6z^{-1}}{\brak{1 - z^{-1}}^2}\\
- &= \frac{7 - z^{-1}}{\brak{1-z^{-1}}^2}
+ X_1\brak{z} = \frac{7 - z^{-1}}{\brak{1-z^{-1}}^2}
  \end{align}
  The ROC is $|z|>1$ as it is an AP.
  
 \textbf{\brak{ii}}
-
 \begin{align}
-x_{2}\brak{n} &= \brak{18 + n\brak{-2\frac{1}{2}}}u\brak{n}\\
-     x_{2}\brak{n} & = \begin{cases}
-        0 & \text{for } n < 0 \\
-        18 + n\brak{-2\frac{1}{2}} & \text{for } n \geq 0
-    \end{cases}
+x_{2}\brak{n} &= \brak{18 + n\brak{-2\frac{1}{2}}}u\brak{n}
  \end{align}
+ Using the values in \tabref{table0} and equation \eqref{eq:eq12},
+\begin{align}
+    k_2 = \frac{-47 - 18}{-2\frac{1}{2}} = 26
+\end{align}
 Using the values in \tabref{table0} and equation \eqref{eq:eq3} :
 \begin{align} 
- X\brak{z} &=  \frac{18}{1 - z^{-1}} - \brak{2\frac{1}{2}}\frac{z^{-1}}{\brak{1-z^{-1}}^2}\\
-&= \frac{18 - \brak{20\frac{1}{2}}z^{-1}}{\brak{1 - z^{-1}}^2}
+ X_2\brak{z} = \frac{18 - \brak{20\frac{1}{2}}z^{-1}}{\brak{1 - z^{-1}}^2}
 \end{align}
 
 The ROC is $|z|>1$ as it is an AP.
 
-\newpage
-The graphs for x\brak{n} : \\
-\large\textbf{\brak{i}} \normalsize The graph of $x_{1}$\brak{n} is :
-\begin{figure}[ht]
+\begin{figure}[!ht]
+\text{The graph of $x_1\brak{n}$ is :}
     \begin{center}
-    \includegraphics[width = 8cm]{Figure_1}\\
-    Fig. 0. Plot of x\brak{n} \\
+    \includegraphics[width = 7cm]{Figure_1}\\
+    Fig. 0. Plot of $x_1$\brak{n} \\
     \end{center}
 \end{figure}
-
-\large\textbf{\brak{ii}} \normalsize The graph of $x_{2}$\brak{n} is :
+ 
 \begin{figure}[!ht]
+\text{The graph of $x_{2}$\brak{n} is :}
     \begin{center}
-    \includegraphics[width = 8cm]{Figure_2}\\
-    Fig. 1. Plot of x\brak{n} \\
+    \includegraphics[width = 7cm]{Figure_2}\\
+    Fig. 1. Plot of $x_2$\brak{n} \\
     \end{center}
 \end{figure}
 
