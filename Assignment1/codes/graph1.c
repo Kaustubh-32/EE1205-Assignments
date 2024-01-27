@@ -15,7 +15,7 @@ int main() {
     float x1;  //term of the first series
     float x2;  //term of the second series
 
-    for(n=0;n<51;n++)
+    for(n=0;n<21;n++)
     {
         x1 = first_term_1 + (float)(n)*(common_difference_1);
         x2 = first_term_2 + (float)(n)*(common_difference_2);
