@@ -61,11 +61,13 @@
 
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-\large\textbf{Question 10.5.2.5} : \normalsize Find the number of terms in each of the following APs. Then express each term as x(n) and find the z transform and its ROC: 
+\large\textbf{Question 10.5.2.5} : \normalsize Find the number of terms in each of the following APs. Then express each term as x(n) and find the z transform, ROC and plot the graph for x\brak{n}: 
+\begin{enumerate}
+    \item 7, 13, 19, ... 205
 
-\brak{i} 7, 13, 19, ... 205
+    \item 18, 15$\frac{1}{2}$, 13, ... -47
+\end{enumerate}
 
-\brak{ii} 18, 15$\frac{1}{2}$, 13, ... -47
 
 
 \large\textbf{Solution} :\normalsize
@@ -76,9 +78,11 @@ The number of terms in the AP x(n) is given by:
     \frac{x\brak{n} - x\brak{0}}{d} + 1
     \end{align}
 \begin{align}
-    X_i(z) = \frac{x_i\brak{0}}{1 - z^{-1}} + d_i\frac{z^{-1}}{\brak{1-z^{-1}}^2} \text{ , for i=1,2} \label{eq:eq3}
+    &X_i(z) = \frac{x_i\brak{0}}{1 - z^{-1}} + d_i\frac{z^{-1}}{\brak{1-z^{-1}}^2} \text{ , for i=1,2} \label{eq:eq3}\\
+    &\text{ROC : $\abs{z} > 1$ as it is an AP}   
 \end{align}
-\textbf{\brak{i}}
+\begin{enumerate}
+    \item 
 \begin{align}
 x_{1}\brak{n} &= \brak{7 + \brak{n}6}u\brak{n}
 \end{align}
@@ -89,11 +93,10 @@ Using the values in \tabref{table0} and equation \eqref{eq:eq12},
 
 Using the values in \tabref{table0} and equation \eqref{eq:eq3} :
 \begin{align}
- X_1\brak{z} = \frac{7 - z^{-1}}{\brak{1-z^{-1}}^2}
+ X_1\brak{z} = \frac{7 - z^{-1}}{\brak{1-z^{-1}}^2} , \abs{z} > 1
  \end{align}
- The ROC is $|z|>1$ as it is an AP.
  
-\textbf{\brak{ii}}
+\item
 \begin{align}
 x_{2}\brak{n} &= \brak{18 + n\brak{-2\frac{1}{2}}}u\brak{n}
  \end{align}
@@ -103,25 +106,25 @@ x_{2}\brak{n} &= \brak{18 + n\brak{-2\frac{1}{2}}}u\brak{n}
 \end{align}
 Using the values in \tabref{table0} and equation \eqref{eq:eq3} :
 \begin{align} 
- X_2\brak{z} = \frac{18 - \brak{20.5}z^{-1}}{\brak{1 - z^{-1}}^2}
+ X_2\brak{z} = \frac{18 - \brak{20.5}z^{-1}}{\brak{1 - z^{-1}}^2} , \abs{z} > 1
 \end{align}
 
-The ROC is $|z|>1$ as it is an AP.
 
 \begin{figure}[!ht]
-\text{The graph of $x_1\brak{n}$ is :}
-    \begin{center}
-    \includegraphics[width = 7cm]{Figure_1}\\
-    Fig. 0. Plot of $x_1$\brak{n} \\
-    \end{center}
-\end{figure}
- 
-\begin{figure}[!ht]
-\text{The graph of $x_{2}$\brak{n} is :}
-    \begin{center}
-    \includegraphics[width = 7cm]{Figure_2}\\
-    Fig. 1. Plot of $x_2$\brak{n} \\
-    \end{center}
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_1}
+\caption{Plot of $x_1\brak{n}$}
+\end{center}
 \end{figure}
 
+\begin{figure}[!ht]
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_2}
+\caption{Plot of $x_2\brak{n}$}
+\end{center}
+\end{figure}
+
+\end{enumerate}
 \end{document}

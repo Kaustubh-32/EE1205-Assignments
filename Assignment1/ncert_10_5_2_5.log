@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.20)  24 JAN 2024 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.20)  27 JAN 2024 05:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,13 +1287,13 @@ File: ts1txr.fd 2000/12/15 v3.1
 <./figs//Figure_1.jpg, id=15, 481.8pt x 361.35pt>
 File: ./figs//Figure_1.jpg Graphic file (type jpg)
 <use ./figs//Figure_1.jpg>
-Package pdftex.def Info: ./figs//Figure_1.jpg  used on input line 114.
-(pdftex.def)             Requested size: 199.16928pt x 149.373pt.
+Package pdftex.def Info: ./figs//Figure_1.jpg  used on input line 116.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 <./figs//Figure_2.jpg, id=16, 481.8pt x 361.35pt>
 File: ./figs//Figure_2.jpg Graphic file (type jpg)
 <use ./figs//Figure_2.jpg>
-Package pdftex.def Info: ./figs//Figure_2.jpg  used on input line 122.
-(pdftex.def)             Requested size: 199.16928pt x 149.373pt.
+Package pdftex.def Info: ./figs//Figure_2.jpg  used on input line 124.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -1302,13 +1302,13 @@ Package rerunfilecheck Info: File `ncert_10_5_2_5.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30473 strings out of 476091
- 600018 string characters out of 5794081
- 1877330 words of memory out of 5000000
- 50171 multiletter control sequences out of 15000+600000
+ 30482 strings out of 476091
+ 600116 string characters out of 5794081
+ 1879330 words of memory out of 5000000
+ 50173 multiletter control sequences out of 15000+600000
  593762 words of font info for 209 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,12n,96p,1182b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,96p,1182b,464s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1317,10 +1317,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ncert_10_5_2_5.pdf (1 page, 158606 bytes).
+Output written on ncert_10_5_2_5.pdf (1 page, 158759 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
