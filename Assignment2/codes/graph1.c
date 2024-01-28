@@ -13,10 +13,10 @@ int main() {
     int n ; // sum of n terms of series
     float s;
     
-    for(n=0;n<21;n++)
+    for(n=1;n<22;n++)
     {
         s = first_term * ((pow(common_ratio,n)-1)/(common_ratio - 1));
-        fprintf(file ,"%d \t %e \n",n , s);
+        fprintf(file ,"%d \t %e \n",n-1 , s);
     }
     fclose(file);
     return 0;
