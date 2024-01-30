@@ -11,12 +11,14 @@ int main() {
     float common_ratio = 2.0 / 3.0 ;     
 
     int n ; // sum of n terms of series
-    float s;
-    
-    for(n=1;n<22;n++)
+    float s;  //sum
+    float x ; // term
+
+    for(n=1;n<=21;n++)
     {
+        x = first_term*(pow(common_ratio,n-1));
         s = first_term * ((pow(common_ratio,n)-1)/(common_ratio - 1));
-        fprintf(file ,"%d \t %e \n",n-1 , s);
+        fprintf(file ,"%d \t %e \t %e\n",n-1 , x , s);
     }
     fclose(file);
     return 0;

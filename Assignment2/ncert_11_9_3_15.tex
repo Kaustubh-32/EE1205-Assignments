@@ -64,26 +64,71 @@
 
 \input{tables/table1}
 \begin{align}
-    s\brak{k} = x\brak{0}\frac{r^k -1}{r-1} \label{eq:eq1}
+   & X\brak{z} = \frac{x\brak{0}}{1 - rz^{-1}} \label{eq:eq3}\\
+   & \text{ROC is $\abs{z} > \abs{r}$ as it is a GP.}   
 \end{align}
-
+ Sum to n terms of GP can be given as :
+\begin{align}
+    s\brak{n} &= x\brak{n}*u\brak{n}\\
+    \implies  S\brak{Z} &= X\brak{Z}U\brak{Z}\label{eq:eq4}
+\end{align}
 from \tabref{tab:table0} :
 \begin{align}
     &x\brak{6} = x\brak{0}r^6\\
     \implies &64 = 729r^6\\
     &\therefore r = \frac{2}{3}\label{eq:eq2}
 \end{align}
-    using equation \eqref{eq:eq1} and equation \eqref{eq:eq2}
+%    using equation \eqref{eq:eq1} and equation \eqref{eq:eq2}
+%\begin{align}
+% s\brak{6} &= 729\frac{\brak{\frac{2}{3}}^6 - 1}{\frac{2}{3} - 1}\\
+% & = \frac{729\left(\frac{2187 - 128}{2187}\right)}{\frac{1}{3}}\\
+%\implies s\brak{6} &= 2059
+%\end{align}
+using \tabref{tab:table0} and equation \eqref{eq:eq3}
 \begin{align}
-    s\brak{6} &= 729\frac{\brak{\frac{2}{3}}^6 - 1}{\frac{2}{3} - 1}\\
-  & = \frac{729\left(\frac{2187 - 128}{2187}\right)}{\frac{1}{3}}\\
-	\implies s\brak{6} &= 2059
+    X\brak{z} &= \frac{729}{1 - \frac{2}{3}z^{-1}}\label{eq:eq6}
+\end{align}
+using \tabref{tab:table0}, equation \eqref{eq:eq4} and equation \eqref{eq:eq6}
+\begin{align}
+    S\brak{z} &= \frac{729}{\brak{1 - \frac{2}{3}z^{-1}}\brak{1-z^{-1}}}\\
+    &= 2187\brak{\frac{1}{1-z^{-1}} - \frac{\frac{2}{3}}{1 - \frac{2}{3}z^{-1}}} \label{eq:eq5}
+\end{align}
+Using contour integration for inverse Z transform,
+\begin{align}
+    s\brak{6} &= \frac{1}{2\pi j}\int S\brak{z} z^{5} dz\\
+    &= \frac{1}{2\pi j}\brak{\int\frac{2187z^{6}}{z-1}dz + \int\frac{1458z^{6}}{z - \frac{2}{3}} dz} \label{eq:eq8}
+\end{align}
+Solution of each of these integrals can be given by :
+\begin{align}
+    I =\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} \label{eq:eq7}
+\end{align}
+using equations \eqref{eq:eq8} and \eqref{eq:eq7}:
+\begin{align}
+    \frac{1}{2\pi j}\brak{\int\frac{2187z^{6}}{z - 1}dz} &= \lim\limits_{z\to 1}\brak{\brak{z-1}\frac{2187z^{6}}{z-1}}\\
+    &= \lim\limits_{z \to1}\brak{2187z^{6}}\\
+    &= 2187\label{eq:eq9}\\
+     \frac{1}{2\pi j}\brak{\int\frac{1458z^{6}}{z - \frac{2}{3}}dz} &= \lim\limits_{z\to \frac{2}{3}}\brak{\brak{z-\frac{2}{3}}\frac{1458z^{6}}{z-\frac{2}{3}}}\\
+     &= \lim\limits_{z \to\frac{2}{3}}\brak{1458z^{6}}\\
+     &= 128\label{eq:eq10}
+     \end{align}
+using equations \eqref{eq:eq8}, \eqref{eq:eq9}, \eqref{eq:eq10}:
+\begin{align}
+s\brak{6} &= 2187 - 128\\
+&= 2059
 \end{align}
 \begin{figure}[!ht]
 \centering
 \begin{center}
 \includegraphics[width=\columnwidth]{Figure_1}
 \caption{Plot of $s\brak{n}$}
+\end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_2}
+\caption{Plot of $x\brak{n}$}
 \end{center}
 \end{figure}
 \end{document}
