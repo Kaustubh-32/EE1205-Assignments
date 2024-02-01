@@ -58,7 +58,9 @@
 
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-\large\textbf{Question 11.9.3.15} : Given a GP with a = 729 and $7^{th}$ term 64, find $S_7$.
+\large\textbf{Question 11.9.3.15} :
+
+Given a GP with a = 729 and $7^{th}$ term 64, find $S_7$.
 
 \solution
 
@@ -103,6 +105,7 @@ Solution of each of these integrals can be given by :
 \begin{align}
     I =\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} \label{eq:eq7}
 \end{align}
+where m is the power of  \brak{z-a} in denominator.\\
 using equations \eqref{eq:eq8} and \eqref{eq:eq7}:
 \begin{align}
     \frac{1}{2\pi j}\brak{\int\frac{2187z^{6}}{z - 1}dz} &= 2187\label{eq:eq9}\\
@@ -113,19 +116,19 @@ using equations \eqref{eq:eq8}, \eqref{eq:eq9}, \eqref{eq:eq10}:
 y\brak{6} &= 2187 - 128\\
 &= 2059
 \end{align}
-\begin{figure}[!ht]
+
+\begin{figure}\label{fig:fig1}
 \centering
 \begin{center}
 \includegraphics[width=\columnwidth]{Figure_1}
-\caption{Plot of $s\brak{n}$}
 \end{center}
+\caption{Plot of $y\brak{n}$}
 \end{figure}
-
-\begin{figure}[!ht]
+\begin{figure}\label{fig:fig2}
 \centering
 \begin{center}
 \includegraphics[width=\columnwidth]{Figure_2}
-\caption{Plot of $x\brak{n}$}
 \end{center}
+\caption{Plot of $x\brak{n}$}
 \end{figure}
 \end{document}
