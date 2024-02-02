@@ -87,29 +87,27 @@ from \tabref{tab:table0} :
 %\end{align}
 using \tabref{tab:table0} and equation \eqref{eq:eq3}
 \begin{align}
-    &X\brak{z} = \frac{729}{1 - \frac{2}{3}z^{-1}}\label{eq:eq6}\\
-    &\text{ROC is $\abs{z} > \frac{2}{3}$}
+    &X\brak{z} = \frac{729}{1 - \frac{2}{3}z^{-1}}\label{eq:eq6},\abs{z} > \frac{2}{3}
 \end{align}
 using \tabref{tab:table0}, equation \eqref{eq:eq4} and equation \eqref{eq:eq6}
 \begin{align}
     Y\brak{z} &= \frac{729}{\brak{1 - \frac{2}{3}z^{-1}}\brak{1-z^{-1}}}\\
-    &= 2187\brak{\frac{1}{1-z^{-1}} - \frac{\frac{2}{3}}{1 - \frac{2}{3}z^{-1}}} \label{eq:eq5}\\
-    &\text{ROC is $\abs{z}  > 1$}
+    &= 2187\brak{\frac{1}{1-z^{-1}} - \frac{\frac{2}{3}}{1 - \frac{2}{3}z^{-1}}} \label{eq:eq5},\abs{z}  > 1
 \end{align}
 Using contour integration for inverse z transform,
 \begin{align}
-    y\brak{6} &= \frac{1}{2\pi j}\int Y\brak{z} z^{5} dz\\
-    &= \frac{1}{2\pi j}\brak{\int\frac{2187z^{6}}{z-1}dz + \int\frac{1458z^{6}}{z - \frac{2}{3}} dz} \label{eq:eq8}
+    y\brak{6} &= \frac{1}{2\pi j}\oint Y\brak{z} z^{5} dz\\
+    &= \frac{1}{2\pi j}\brak{\oint\frac{2187z^{6}}{z-1}dz + \oint\frac{1458z^{6}}{z - \frac{2}{3}} dz} \label{eq:eq8}
 \end{align}
 Solution of each of these integrals can be given by :
 \begin{align}
     I =\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} \label{eq:eq7}
 \end{align}
-where m $\geq$ power of  \brak{z-a} in denominator.\\
+where m is the number of times pole is repeated.\\
 using equations \eqref{eq:eq8} and \eqref{eq:eq7}:
 \begin{align}
-    \frac{1}{2\pi j}\brak{\int\frac{2187z^{6}}{z - 1}dz} &= 2187\label{eq:eq9}\\
-     \frac{1}{2\pi j}\brak{\int\frac{1458z^{6}}{z - \frac{2}{3}}dz}  &= 128\label{eq:eq10}
+    \frac{1}{2\pi j}\brak{\oint\frac{2187z^{6}}{z - 1}dz} &= 2187\label{eq:eq9}\\
+     \frac{1}{2\pi j}\brak{\oint\frac{1458z^{6}}{z - \frac{2}{3}}dz}  &= 128\label{eq:eq10}
      \end{align}
 using equations \eqref{eq:eq8}, \eqref{eq:eq9}, \eqref{eq:eq10}:
 \begin{align}
