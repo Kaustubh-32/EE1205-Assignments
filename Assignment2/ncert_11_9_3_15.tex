@@ -65,19 +65,12 @@ Given a GP with a = 729 and $7^{th}$ term 64, find $S_7$.
 \solution
 
 \input{tables/table1}
-\begin{align}
-   & X\brak{z} = \frac{x\brak{0}}{1 - rz^{-1}} , \abs{z} > \abs{r}\label{eq:eq3}
-\end{align}
- Sum to n terms of GP can be given as :
-\begin{align}
-    y\brak{n} &= x\brak{n}*u\brak{n}\\
-    \implies  Y\brak{z} &= X\brak{z}U\brak{z}\label{eq:eq4}
-\end{align}
+
 from \tabref{tab:table0} :
 \begin{align}
-	x\brak{6} &= x\brak{0}r^6\\
-	\implies 64 &= 729r^6\\
-	\therefore r &= \frac{2}{3}\label{eq:eq2}
+    &x\brak{6} = x\brak{0}r^6\\
+    \implies &64 = 729r^6\\
+    &\therefore r = \frac{2}{3}\label{eq:eq2}
 \end{align}
 %    using equation \eqref{eq:eq1} and equation \eqref{eq:eq2}
 %\begin{align}
@@ -85,11 +78,11 @@ from \tabref{tab:table0} :
 % & = \frac{729\left(\frac{2187 - 128}{2187}\right)}{\frac{1}{3}}\\
 %\implies s\brak{6} &= 2059
 %\end{align}
-using \tabref{tab:table0} and equation \eqref{eq:eq3}
+using \tabref{tab:table0} and equation \eqref{eq:eq2}
 \begin{align}
     &X\brak{z} = \frac{729}{1 - \frac{2}{3}z^{-1}}\label{eq:eq6},\abs{z} > \frac{2}{3}
 \end{align}
-using \tabref{tab:table0}, equation \eqref{eq:eq4} and equation \eqref{eq:eq6}
+using \tabref{tab:table0} and equation \eqref{eq:eq6}
 \begin{align}
     Y\brak{z} &= \frac{729}{\brak{1 - \frac{2}{3}z^{-1}}\brak{1-z^{-1}}}\\
     &= 2187\brak{\frac{1}{1-z^{-1}} - \frac{\frac{2}{3}}{1 - \frac{2}{3}z^{-1}}} \label{eq:eq5},\abs{z}  > 1
@@ -100,14 +93,8 @@ Using contour integration for inverse z transform,
 \end{align}
 Using equation \eqref{eq:eq5} in \eqref{eq:eq12} :
 \begin{align}
-    &y\brak{6}= \frac{1}{2\pi j}\brak{\oint\frac{2187z^{6}}{z-1}dz + \oint\frac{1458z^{6}}{z - \frac{2}{3}} dz} \label{eq:eq8}
+    y\brak{6}= \frac{1}{2\pi j}\brak{\oint\frac{2187z^{6}}{z-1}dz - \oint\frac{1458z^{6}}{z - \frac{2}{3}} dz} \label{eq:eq8}
 \end{align}
-Solution of each of these integrals can be given by :
-\begin{align}
-    I =\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} \label{eq:eq7}
-\end{align}
-where m is the number of times pole is repeated.\\
-using equations \eqref{eq:eq8} and \eqref{eq:eq7}:
 \begin{align}
     \frac{1}{2\pi j}\brak{\oint\frac{2187z^{6}}{z - 1}dz} &= 2187\label{eq:eq9}\\
      \frac{1}{2\pi j}\brak{\oint\frac{1458z^{6}}{z - \frac{2}{3}}dz}  &= 128\label{eq:eq10}
@@ -118,14 +105,14 @@ y\brak{6} &= 2187 - 128\\
 &= 2059
 \end{align}
 
-\begin{figure}\label{fig:fig1}
+\begin{figure}[!ht]
 \centering
 \begin{center}
 \includegraphics[width=\columnwidth]{Figure_1}
 \end{center}
 \caption{Plot of $y\brak{n}$}
 \end{figure}
-\begin{figure}\label{fig:fig2}
+\begin{figure}[!ht]
 \centering
 \begin{center}
 \includegraphics[width=\columnwidth]{Figure_2}
