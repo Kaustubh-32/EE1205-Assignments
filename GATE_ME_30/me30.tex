@@ -77,7 +77,7 @@ The figure shows a block of mass m = 20 kg attached to a pair of identical linea
 Derivation for natural frequency $\omega_n$:
 \begin{align}
     F &= ma \\
-    F &= -kx \text{ using Hooke's Law}\\
+    F &= -kx \\
     \implies ma &= -kx\\
     \therefore m\frac{d^2x}{dt^2} &= -kx\label{eq:eq5}
 \end{align}
@@ -90,21 +90,21 @@ Using equations \eqref{eq:eq1} and \eqref{eq:eq2},
 \begin{align}
     C\alpha^2 e^{\alpha t} &= -\omega^2 x\\
     \implies \alpha^2 &= -\omega^2\\
-    \therefore \alpha &= \pm  \iota  \omega \label{eq:eq3}
+    \therefore \alpha &= \pm  j  \omega \label{eq:eq3}
 \end{align}
 Using equations \eqref{eq:eq1} and \eqref{eq:eq3}, there are two solutions $x_1$ and $x_2$ for x ,
 \begin{align}
-    x_1 &= Ce^{-\iota \omega t}\\
-     x_2 &= Ce^{\iota \omega t}
+    x_1 &= Ce^{-j \omega t}\\
+     x_2 &= Ce^{j \omega t}
 \end{align}
 The value of x is real. Hence the general solution can be written as the linear combination of $x_1$ and $x_2$ 
 \begin{align}
-    x\brak{t} = C_1e^{\iota \omega t} + C_2e^{-\iota \omega t}
+    x\brak{t} = C_1e^{j \omega t} + C_2e^{-j \omega t}
 \end{align}
 as x always has a real value,
 \begin{align}
-    \therefore C_1 - C_2 &= 0  \text{ to cancel imaginary term}\\
-    \implies x  &= \brak{A}\cos\brak{\omega t}\label{eq:eq4} \text{ A is a constant}
+    \therefore C_1 - C_2 &= 0  \\
+    \implies x  &= \brak{A}\cos\brak{\omega t} \text{ $\brak{A = C_1 + C_2}$}\label{eq:eq4} 
 \end{align}
 Observe in equation \eqref{eq:eq4}, the time period is $\frac{2\pi}{\omega}$\\
 $\therefore$ $\omega$ is the natural frequency of the system.\\
