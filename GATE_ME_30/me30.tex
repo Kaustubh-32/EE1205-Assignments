@@ -74,53 +74,47 @@ The figure shows a block of mass m = 20 kg attached to a pair of identical linea
 
 \solution\\
 \input{tables/table1}
-Derivation for natural frequency $\omega_n$:
 \begin{align}
     F &= ma \\
     F &= -kx \\
-    \implies ma &= -kx\\
-    \therefore m\frac{d^2x}{dt^2} &= -kx\label{eq:eq5}
+    \implies ma + kx &= 0\\
+    \therefore m\frac{d^2x}{dt^2} + kx &= 0\label{eq:eq1}
 \end{align}
-The derivative of x has x in it's equation. So we can assume x to be of the form :
+The Laplace transform of the terms is ,
 \begin{align}
-    x &= Ce^{\alpha t} \label{eq:eq1}\\
-    \text{Let } \frac{d^2x}{dt^2} &= -\frac{k}{m}x = -\omega^2 x \label{eq:eq2}
+    \frac{d^2x}{dt^2} & \system{\mathcal{L}} s^2 X\brak{s} - sx\brak{0} - \dot{x}\brak{0}\label{eq:eq2}\\
+    x & \system{\mathcal{L}} X\brak{s}\label{eq:eq3}
 \end{align}
-Using equations \eqref{eq:eq1} and \eqref{eq:eq2},
+Using equation \eqref{eq:eq2} and \eqref{eq:eq3} in equation \eqref{eq:eq1},
 \begin{align}
-    C\alpha^2 e^{\alpha t} &= -\omega^2 x\\
-    \implies \alpha^2 &= -\omega^2\\
-    \therefore \alpha &= \pm  j  \omega \label{eq:eq3}
+    &m\brak{s^2 X\brak{s} - sx\brak{0} - \dot{x}\brak{0}} + kX\brak{s} = 0\\
+    &ms^2X\brak{s} -msA + m\brak{0} + kX\brak{s} = 0\\
+    &X\brak{s} = \frac{msA}{ms^2 + k} \\
+    \implies &X\brak{s} = \frac{sA}{s^2 + \frac{k}{m}} \label{eq:eq4}
 \end{align}
-Using equations \eqref{eq:eq1} and \eqref{eq:eq3}, there are two solutions $x_1$ and $x_2$ for x ,
+The inverse Laplace transform of such terms is given by,
 \begin{align}
-    x_1 &= Ce^{-j \omega t}\\
-     x_2 &= Ce^{j \omega t}
+    \frac{s}{s^2 + a^2} \system{\mathcal{L^{ -}}} cos\brak{at}u\brak{t}
 \end{align}
-The value of x is real. Hence the general solution can be written as the linear combination of $x_1$ and $x_2$ 
+$\therefore$ the inverse Laplace of \eqref{eq:eq4} is,
 \begin{align}
-    x\brak{t} = C_1e^{j \omega t} + C_2e^{-j \omega t}
+    x\brak{t} = Acos\brak{\sqrt{\frac{k}{m}t}} \label{eq:eq5}
 \end{align}
-as x always has a real value,
+From equation \eqref{eq:eq5} and \tabref{tab:table0} ,the time to complete one oscillation is,
 \begin{align}
-    \therefore C_1 - C_2 &= 0  \\
-    \implies x  &= \brak{A}\cos\brak{\omega t} \text{ $\brak{A = C_1 + C_2}$}\label{eq:eq4} 
+    T_n &= \frac{2\pi}{\sqrt{\frac{k}{m}}}\\
+    &= \frac{\pi}{5}\label{eq:eq6}
 \end{align}
-Observe in equation \eqref{eq:eq4}, the time period is $\frac{2\pi}{\omega}$\\
-$\therefore$ $\omega$ is the natural frequency of the system.\\
-From equation \eqref{eq:eq2}
+$\therefore$ the time required for 10 oscillations is ,
 \begin{align}
-    \omega &= \sqrt{\frac{k}{m}}
+    10T_n &= 2\pi\\
+    &= 6.28 s
 \end{align}
-using table \tabref{tab:table0} ,
-\begin{align}
-    k_{eq} &= 2000 \label{eq:eq6}\\
-    \omega_n &= 10 rad/s\label{eq:eq7}
-\end{align}
-The time required to complete 10 oscillations using \eqref{eq:eq6} and \eqref{eq:eq7} is \\
-\begin{align}
-    10T &= 10\frac{2\pi}{\omega_n}\\
-    &= 2\pi\\
-    &= 6.28
-\end{align}
+\begin{figure}[!ht]
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_1}
+\end{center}
+\caption{Plot of $x\brak{t}$}
+\end{figure}
 \end{document}
