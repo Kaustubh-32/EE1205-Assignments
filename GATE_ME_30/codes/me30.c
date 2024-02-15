@@ -16,12 +16,12 @@ int main()
         printf("Error opening file!\n");
         return 1;
     }
-    float t_0 = 0.7; //approximately one time period
+
     float t = 0 ; //current time
-    while(t < 0.7)
+    while(t < 7)
     {
         fprintf(file ,"%f \t %e\n", t , x((float)(t)));
-        t+= 0.001 ;
+        t+= 0.001 ; // find values after every 0.001 seconds
     }   
     return 0 ;
 }
