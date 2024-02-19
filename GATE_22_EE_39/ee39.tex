@@ -119,7 +119,7 @@ Using equation \eqref{eq:eq1_ee39} :
     H\brak{s} &= \frac{\frac{100}{s^2}}{1 + \frac{10}{s} + \frac{100}{s^2}} \\
     &= \frac{100}{s^2 + 10s + 100}\label{eq:eq2_ee39}
 \end{align}
-Referring to \tabref{tab:table0_ee_22_39}, the general equation of the damping system can be written as :
+Referring to \tabref{tab:table0_ee_22_39}, the general equation of the damping system is second order and can be written as :
 \begin{align}
     m\ddot{y}(t) + c\dot{y}(t) + ky(t) = x(t)
 \end{align}
@@ -131,8 +131,22 @@ Take the Laplace transform and solve for $\frac{Y\brak{s}}{X\brak{s}}$ :
 Comparing equations \eqref{eq:eq2_ee39} and \eqref{eq:eq3_ee39} ,
 \begin{align}
     \omega_n ^2 &= 100\\
-    \implies \omega_n &= 10 \text{ rad/s} \label{eq:eq4_ee39}
+    \implies \omega_n &= 10 \text{ rad/s} \label{eq:eq4_ee39}\\
     2\zeta \omega_n &= 10\\
-    \implies \zeta = 0.5
+    \implies \zeta &= 0.5
 \end{align}
+\begin{figure}[!ht]
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_1}
+\end{center}
+\caption{Magnitude plot}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\begin{center}
+\includegraphics[width=\columnwidth]{Figure_2}
+\end{center}
+\caption{Phase plot}
+\end{figure}
 \end{document}
