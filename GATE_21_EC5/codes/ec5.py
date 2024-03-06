@@ -1,30 +1,27 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Define x[n] and h[n]
-x_n = np.arange(1, 17)
-h_n = np.ones(16)
+# Reading values from file
+with open("values.dat", 'r') as file:
+    lines = file.readlines()
 
-# Calculate y[n] (linear convolution)
-y_n = np.convolve(x_n, h_n, mode='full')
+# Extracting y[n] and z[n] values as float type from values.dat line by line by splitting the line.
+y_n_values = np.array(lines[0].split()).astype(float)
+z_n_values = np.array(lines[1].split()[:16]).astype(float)
 
-# Calculate z[n] (IDFT of the product of DFTs of x[n] and h[n])
-X_k = np.fft.fft(x_n)
-H_k = np.fft.fft(h_n)
-z_n = np.fft.ifft(X_k * H_k)
-
-# Plot y[n] and z[n]
+# Plotting y[n] and z[n]
 plt.figure(figsize=(10, 6))
-plt.stem(range(len(y_n)), y_n, linefmt='C0-', markerfmt='C0o', basefmt='C0-', label='y[n]')
-plt.stem(range(len(z_n)), z_n, linefmt='C1-', markerfmt='C1o', basefmt='C1-', label='z[n]')
+plt.stem(range(len(y_n_values)), y_n_values, linefmt='C0-', markerfmt='C0o', basefmt='C0-', label='y[n]') # plot wrt to the index of the y[n] and z[n]
+plt.stem(range(len(z_n_values)), z_n_values, linefmt='C1-', markerfmt='C1o', basefmt='C1-', label='z[n]') # similar for z
 plt.xlabel('n')
 plt.ylabel('Value')
 plt.legend()
 
-# Highlight the equality for n = 15
-plt.scatter(15, y_n[15], color='blue', marker='x', s=100, label=f'y[15] = {y_n[15]:.2f}')
-plt.scatter(15, z_n[15], color='red', marker='^', s=100, label=f'z[15] = {z_n[15]:.2f}')
+# Highlighting that y[n] and z[n] are equal for n = 15 (values is 136 at that point)
+plt.scatter(15, y_n_values[15], color='blue', marker='x', s=100, label=f'y[15] = {y_n_values[15]:.2f}')
+plt.scatter(15, z_n_values[15], color='red', marker='^', s=100, label=f'z[15] = {z_n_values[15]:.2f}')
 
 plt.grid(True)
 plt.legend()
-plt.show()
+#plt.show()
+plt.savefig("Figure_1")
